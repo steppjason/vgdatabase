@@ -3,10 +3,10 @@ import axios from 'axios'
 
 export default () => {
     return axios.create({
-        baseURL: `http://localhost:3000/api/games`,
-        headers: {
-            //Authorization: `Bearer ${store.state.token}`
-            Authorization: 'Basic ANxbuasd9ba0=='
-        }
+        baseURL: `https://127.0.0.1:3000/api/games`,
+        //headers: {
+        //    //Authorization: `Bearer ${store.state.token}`
+        //    Authorization: 'Basic ANxbuasd9ba0=='
+        //}
     })
 }
