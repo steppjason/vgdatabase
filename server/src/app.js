@@ -1,10 +1,14 @@
 const express = require('express')
 const cors = require('cors')
+const bodyParser = require('body-parser');
 const gamesRouter = require('./routers/gamesRouter')
 
 const app = express()
+//app.use(express.json())
+app.use(bodyParser.json())
 app.use(cors())
-app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
 app.use('/api/games', gamesRouter)
 
 // app.listen(3000, () => {
@@ -12,8 +16,9 @@ app.use('/api/games', gamesRouter)
 // })
 
 const port = 3000
+const hostname = 'localhost'
 
-app.listen(port, () => {
-    console.log(`Server is listening on https://localhost:${port}`)
+app.listen(port, hostname, () => {
+    console.log(`Server is listening on http://${hostname}:${port}`)
 })
 
