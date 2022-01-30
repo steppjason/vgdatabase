@@ -2,8 +2,9 @@
   <div>
     <h3>List of all games</h3>
     <div :games="games" :key="game.id" v-for="game in games">
-      <div>{{ game.title }}</div>
+      <div>{{ game.title }} ({{ game.year }})</div>
     </div>
+    <div>{{ error }}</div>
   </div>
 </template>
 
@@ -15,12 +16,17 @@ export default {
   name: "Home",
   data(){
     return{
-      games:{}
+      games:{},
+      error: ''
     }
   },
   async mounted(){
-    this.games = (await GameService.getGames()).data.games
-    console.log(this.games)
+    try{
+      this.games = (await GameService.getGames()).data.games
+    } catch(err){
+      console.log(err)
+      this.error = err
+    }
   }
-};
+}
 </script>
