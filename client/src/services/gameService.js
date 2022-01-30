@@ -1,23 +1,49 @@
 import api from '@/services/api'
 
-function getGames() {
-    return api().get('/')
+class GameService{
+    static  getGames() {
+        return api().get('/')
+    }
+    
+    static getGame(id) {
+        return api().get(`/${id}`)
+    }
+    
+    static addGame(game) {
+        return api().post(`/${game}`)
+    }
+    
+    static updateGame(id) {
+        return api().put(`/${id}`)
+    }
+    
+    static deleteGame(id) {
+        return api().delete(`/${id}`)
+    }
 }
 
-function getGame(id) {
-    return api().get(`/${id}`)
-}
+export default GameService
 
-function addGame(game) {
-    return api().post(`/${game}`)
-}
+// function  getGames() {
+//     return api().get('/')
+// }
 
-function updateGame(id) {
-    return api().put(`/${id}`)
-}
+// function getGame(id) {
+//     return api().get(`/${id}`)
+// }
 
-function deleteGame(id) {
-    return api().delete(`/${id}`)
-}
+// function addGame(game) {
+//     return api().post(`/${game}`)
+// }
 
-export default { getGames, getGame, addGame, updateGame, deleteGame }
+// function updateGame(id) {
+//     return api().put(`/${id}`)
+// }
+
+// function deleteGame(id) {
+//     return api().delete(`/${id}`)
+// }
+
+//export default { getGames, getGame, addGame, updateGame, deleteGame }
+
+

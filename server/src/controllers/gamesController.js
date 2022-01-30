@@ -1,7 +1,6 @@
 //TODO: Setup database connection
 let { games } = require('../data/games')
 
-
 function getGames(req, res) {
     //Get games from DB
     res.status(200).json({success:true, message: 'Retrieved games successfully!', games: games  })
