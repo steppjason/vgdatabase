@@ -11,10 +11,11 @@ app.use(express.urlencoded({extended: true}))
 app.use('/api/games', gamesRouter)
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(__dirname + process.env.STATIC_FOLDER ))
-    app.get(/.*/, (req, res) => res.sendFile(__dirname + process.env.STATIC_FOLDER + process.env.STATIC_PAGE ))
+    app.use(express.static(__dirname + '/public/'))
+    app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'))
 }
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server is listening on :${process.env.PORT}`)
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+    console.log(`Server is listening on :${port}`)
 })
