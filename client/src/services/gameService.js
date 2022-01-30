@@ -1,7 +1,7 @@
 import api from '@/services/api'
 
 class GameService{
-    static  getGames() {
+    static getGames() {
         return api().get('/')
     }
     

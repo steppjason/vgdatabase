@@ -1,8 +1,9 @@
 const express = require('express')
 const cors = require('cors')
 require('dotenv/config')
+require('dotenv-flow/config')
 
-const gamesRouter = require('./routers/gamesRouter')
+const gamesRouter = require('./routers/gameRouter')
 
 const app = express()
 app.use(express.json())
@@ -16,6 +17,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const port = process.env.PORT || 3000
+
 app.listen(port, () => {
     console.log(`Server is listening on :${port}`)
+    console.log(process.env.DB_URI)
 })
