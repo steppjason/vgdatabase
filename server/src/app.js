@@ -3,13 +3,13 @@ const cors = require('cors')
 require('dotenv/config')
 require('dotenv-flow/config')
 
-const gamesRouter = require('./routers/gameRouter')
+const gameRouter = require('./routers/gameRouter')
 
 const app = express()
 app.use(express.json())
 app.use(cors())
 app.use(express.urlencoded({extended: true}))
-app.use('/api/game', gamesRouter)
+app.use('/api/game', gameRouter)
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(__dirname + '/public/'))
