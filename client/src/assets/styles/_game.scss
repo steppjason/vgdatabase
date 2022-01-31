@@ -1,0 +1,41 @@
+.game{
+
+}
+
+.game__block{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.game__title{
+    margin:0;
+    margin-bottom:1rem
+    
+}
+
+.game__cover, .game__attributes{
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.game__cover{
+    max-width: 250px;
+}
+
+.game__cover > img{
+    width: 100%;
+}
+
+.game__attributes > li{
+    margin-bottom: 1rem;
+}
+
+.game__attributes--title{
+    font-weight: 700;
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 0;
+    margin-bottom:0.25rem;
+}

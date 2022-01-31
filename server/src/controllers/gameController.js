@@ -1,8 +1,7 @@
 const dataController = require('./dataController')
 
-
-async function getGames(req, res) {
-    await runQuery( 'SELECT * FROM game', null, 'Found  games successfully!', 'No games found!', req, res)
+function getGames(req, res) {
+    runQuery( 'SELECT * FROM game ORDER BY title ASC', null, 'Found  games successfully!', 'No games found!', req, res)
 }
 
 function getGame(req, res) {

@@ -1,11 +1,15 @@
 .gamelist{
+
+}
+
+.gamelist__row{
     display:grid;
     grid-template-columns: auto 100px;
-    row-gap: 1.1rem;
+    margin-bottom: 1.1rem;
 }
 
 .gamelist__head, .gamelist__title, .gamelist__year {
-    border-bottom:1px solid var(--shadow-color);
+    border-bottom:1px solid var(--accent-color);
     padding-bottom:0.25rem;
     color:var(--main-primary-color);
 }
@@ -16,7 +20,20 @@
 
 .gamelist__head{
     font-weight: 900;
-    border-bottom:3px solid var(--shadow-color);
+    border-bottom:3px solid var(--accent-color);
+}
+
+.gamelist__link{
+    display: block;
+    text-decoration: none;
+    font-weight:700;
+    color: var(--contrast-primary-color);
+    transition: 0.3s all ease-in
+}
+
+.gamelist__link:hover{
+    color: var(--contrast-secondary-color);
+
 }
 
 .gamelist__year{

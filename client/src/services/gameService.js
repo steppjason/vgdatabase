@@ -5,8 +5,8 @@ class GameService{
         return await api().get('/')
     }
     
-    static getGame(id) {
-        return api().get(`/${id}`)
+    static getGame(id, url) {
+        return api().get(`/${id}/${url}`)
     }
     
     static addGame(game) {
