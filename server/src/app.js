@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 require('dotenv/config')
-require('dotenv-flow/config')
+//require('dotenv-flow').config()
 
 const gameRouter = require('./routers/gameRouter')
 
