@@ -1,5 +1,8 @@
 <template>
     <div class="page">
+        <div class="page__header">
+            <div><TheNav/></div>
+        </div>
         <div :key="game.id" v-for="game in games">
             <div class="page__block game">
                 <h1 class="game__title">{{game.title}}</h1>
@@ -26,6 +29,7 @@
 
 <script>
 import GameService from '@/services/gameService'
+import TheNav from '../components/TheNav.vue'
 
 export default {
     name: 'Game',
@@ -34,6 +38,9 @@ export default {
             games:{},
             error: ''
         }
+    },
+    components:{
+        TheNav
     },
     async mounted(){
         try{

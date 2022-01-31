@@ -2,7 +2,11 @@
   <div id="wrapper">
     <TheHeader/>
     <main>
-      <router-view />
+      <router-view v-slot="{ Component }">
+				<transition name="route" mode="out-in">
+					<component :is="Component"></component>
+				</transition>
+			</router-view>
     </main>
     <TheFooter/>
   </div>
