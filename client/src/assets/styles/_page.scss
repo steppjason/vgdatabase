@@ -1,0 +1,17 @@
+.page{
+
+}
+
+.page__block{
+    padding:2rem;
+    background-color:var(--bg-secondary-color);
+    box-shadow:5px 5px 5px 1px var(--shadow-color);
+    border-radius:5px;
+}
+
+.page__title{
+    margin-top: 2.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+}

@@ -5,6 +5,8 @@
 
 html,body{
     font-family: "Nunito", sans-serif;
+    color: var(--main-primary-color);
+    background-color: var(--bg-primary-color);
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -23,7 +25,21 @@ header{
 }
 
 footer{
-    margin-top:1rem;
-    margin-bottom:1rem;
+    padding: 2rem;
+    color: var(--main-secondary-color)
+}
+
+.footer__nav{
+    text-align: right;
+}
+
+.footer__copy{
+    margin-top: 3rem;
+    margin-bottom: 1rem;
     text-align: center;
+    font-size: 0.75rem;
+}
+
+.made-with>span{
+    opacity: 0.5;
 }

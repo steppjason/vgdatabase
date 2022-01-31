@@ -1,0 +1,26 @@
+.gamelist{
+    display:grid;
+    grid-template-columns: auto 100px;
+    row-gap: 1.1rem;
+}
+
+.gamelist__head, .gamelist__title, .gamelist__year {
+    border-bottom:1px solid var(--shadow-color);
+    padding-bottom:0.25rem;
+    color:var(--main-primary-color);
+}
+
+.gamelist__title, .gamelist__year{
+    color: var(--main-secondary-color)
+}
+
+.gamelist__head{
+    font-weight: 900;
+    border-bottom:3px solid var(--shadow-color);
+}
+
+.gamelist__year{
+    text-align: right;
+}
+
+
