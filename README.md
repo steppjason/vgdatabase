@@ -29,7 +29,8 @@ By default the app uses a database URI to connect to a database.
 
 If you prefer to use a host, user, password config, in the ***/server/src/controllers/dataController.js** file contains the following code. Comment out the connectionString and uncomment the other lines:
 
-`const {Pool} = require('pg')
+```
+const {Pool} = require('pg')
 
 try {
     pool = new Pool({
@@ -47,7 +48,8 @@ try {
     console.error("Connection failed: " + err)    
 }
 
-module.exports = pool`
+module.exports = pool
+```
 
 ## License
 
