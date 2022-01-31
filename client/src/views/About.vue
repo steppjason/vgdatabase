@@ -14,7 +14,6 @@
 
 
 <script>
-import GameService from '@/services/gameService'
 import TheNav from '../components/TheNav.vue'
 
 export default {
@@ -27,14 +26,6 @@ export default {
     },
     components:{
         TheNav
-    },
-    async mounted(){
-        try{
-            this.games = (await GameService.getGame(this.$route.params.id, this.$route.params.url)).data.data
-        } catch(err){
-            console.log(err)
-            this.error = err
-        }
     },
     methods:{
         formatDate(date){
