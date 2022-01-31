@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 app.use(express.urlencoded({extended: true}))
-app.use('/api/games', gamesRouter)
+app.use('/api/game', gamesRouter)
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(__dirname + '/public/'))
@@ -19,6 +19,7 @@ if (process.env.NODE_ENV === 'production') {
 const port = process.env.PORT || 3000
 
 app.listen(port, () => {
-    console.log(`Server is listening on :${port}`)
-    console.log(process.env.DB_URI)
+    console.log(`Server is listening on PORT:${port}`)
+    console.log(`Connecting to: ${process.env.DB_URI}`)
+    console.log('Ready...')
 })

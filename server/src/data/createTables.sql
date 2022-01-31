@@ -1,4 +1,3 @@
-
 -- Main game table
 CREATE TABLE game (
     gameid          SERIAL PRIMARY KEY,

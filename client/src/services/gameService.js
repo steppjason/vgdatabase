@@ -1,8 +1,8 @@
 import api from '@/services/api'
 
 class GameService{
-    static getGames() {
-        return api().get('/')
+    static async getGames() {
+        return await api().get('/')
     }
     
     static getGame(id) {
