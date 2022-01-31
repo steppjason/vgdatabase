@@ -16,6 +16,21 @@ h1,h2,h3,h4,h5,h6{
     margin-bottom:1rem;
 }
 
+a{
+    text-decoration: none;
+    font-weight:700;
+    color: var(--contrast-primary-color);
+    transition: 0.3s all ease-in
+}
+
+a:hover{
+    color: var(--contrast-secondary-color);
+}
+
+p{
+    margin-bottom:1rem;
+}
+
 #wrapper{
     padding:2rem;
     margin:auto;
@@ -33,6 +48,11 @@ footer{
 
 .footer__nav{
     text-align: right;
+}
+
+.footer__link{
+    display: inline-block;
+    margin-left:2rem;
 }
 
 .footer__copy{

@@ -1,7 +1,10 @@
 <template>
 
     <footer>
-        <div class="footer__nav">About</div>
+        <div class="footer__nav">
+            <router-link class="footer__link" :to="{name: 'Home'}">Home</router-link>
+            <router-link class="footer__link" :to="{name: 'About'}">About</router-link>
+        </div>
         <div class="footer__copy">
             <p class="made-with">Made with <span>🌵</span></p>
             <p>&copy; {{ copyright }}</p>
@@ -11,7 +14,7 @@
 
 <script>
 export default {
-    name: 'Footer',
+    name: 'TheFooter',
     computed:{
         copyright() {
 			return new Date().getFullYear();
