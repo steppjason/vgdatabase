@@ -1,11 +1,10 @@
 <template>
     <div class="page">
-        <div class="page__header">
-            <div><TheNav/></div>
-        </div>
         <div :key="game.id" v-for="game in games">
             <div class="page__block game">
-                <h1 class="game__title">{{game.title}}</h1>
+
+                <h1 class="page__title">{{game.title}}</h1>
+
                 <div class="game__block">
                     <div class="game__cover"><img :src="game.coverimage" /></div>
                     <ul class="game__attributes">
@@ -16,10 +15,12 @@
                         <li v-if="game.releasedate"><div class="game__attributes--title">Release Date</div> {{ formatDate(game.releasedate) }}</li>
                     </ul>
                 </div>
+
                 <div v-if="game.summary" class="game__summary">
-                    <h4>Summary</h4>
+                    <h3>Summary</h3>
                     {{game.summary}}
                 </div>
+
                 <!--<div class="game__description">{{game.longdescription}}</div>-->
             </div>
         </div>
@@ -29,7 +30,6 @@
 
 <script>
 import GameService from '@/services/gameService'
-import TheNav from '../components/TheNav.vue'
 
 export default {
     name: 'Game',
@@ -38,9 +38,6 @@ export default {
             games:{},
             error: ''
         }
-    },
-    components:{
-        TheNav
     },
     async mounted(){
         try{

@@ -3,24 +3,27 @@
 }
 
 .gamelist__row{
-    display:grid;
-    grid-template-columns: auto 100px;
-    margin-bottom: 1.1rem;
+    display: grid;
+    grid-template-columns: auto 120px;
+}
+
+.gamelist__row:first-child, .gamelist__row:last-child{
+    padding-bottom:0;
 }
 
 .gamelist__head, .gamelist__title, .gamelist__year {
-    border-bottom:1px solid var(--accent-color);
     padding-bottom:0.25rem;
-    color:var(--main-primary-color);
 }
 
 .gamelist__title, .gamelist__year{
-    color: var(--main-secondary-color)
+    color: var(--main-secondary-color);
 }
 
 .gamelist__head{
     font-weight: 900;
     border-bottom:3px solid var(--accent-color);
+    text-transform: uppercase;
+    color:var(--main-primary-color);
 }
 
 .gamelist__link{
@@ -28,7 +31,8 @@
     text-decoration: none;
     font-weight:700;
     color: var(--contrast-primary-color);
-    transition: 0.3s all ease-in
+    transition: 0.3s all ease-in;
+    padding: 1rem;
 }
 
 .gamelist__link:hover{
@@ -39,4 +43,23 @@
     text-align: right;
 }
 
+.gamelist__year > .gamelist__link{
+    display: block;
+    text-decoration: none;
+    font-weight:500;
+    color: var(--main-secondary-color);
+}
 
+.gamelist__year > .gamelist__link:hover{
+    color: var(--main-secondary-color);
+}
+
+@media screen and (max-width: 540px) {
+    .gamelist__row{
+        grid-template-columns: auto;
+    }
+
+    .gamelist__year{
+        display: none;
+    }
+}

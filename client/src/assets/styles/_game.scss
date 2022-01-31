@@ -19,6 +19,7 @@
 .game__cover, .game__attributes{
     flex-grow: 1;
     overflow: hidden;
+    color: var(--main-secondary-color);
 }
 
 .game__cover{
@@ -35,7 +36,23 @@
 
 .game__attributes--title{
     font-weight: 700;
-    border-bottom: 1px solid var(--accent-color);
+    color: var(--main-primary-color);
     padding-bottom: 0;
     margin-bottom:0.25rem;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 540px) {
+    .game__block{
+        flex-wrap: wrap;
+    }
+
+    .game__cover{
+        width: 100%;
+        max-width: initial;
+    }
+
+    .game__summary{
+        margin-top: 2rem;
+    }
 }

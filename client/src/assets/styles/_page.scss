@@ -2,6 +2,10 @@
 
 }
 
+.page:after{
+    height:200px;
+}
+
 .page__block{
     padding:2rem;
     background-color:var(--bg-secondary-color);
@@ -24,6 +28,11 @@
 
 .page__title{
     margin: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin-bottom:1rem;
+}
+
+@media screen and (max-width: 540px) {
+    .page__title{
+        font-size: 1.5rem;
+    }
 }

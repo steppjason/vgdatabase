@@ -1,21 +1,19 @@
 <template>
     <div class="page">
 
-      <div class="page__header">
-        <div><h3 class="page__title">List of all games</h3></div>
-        <div><TheNav/></div>
-      </div>
-
       <div class="page__block">
+
+        <h1 class="page__title">List of all games</h1>
+
         <div class="gamelist">
           <div class="gamelist__row">
             <div class="gamelist__head">Title</div>
-            <div class="gamelist__head">Release Year</div>
+            <div class="gamelist__year gamelist__head">Release Year</div>
           </div>
           
           <div class="gamelist__row" :key="game.id" v-for="game in games">
               <div class="gamelist__title"><router-link class="gamelist__link" :to="{name: 'Game', params:{id: game.gameid, url: titleToURL(game.title)}}">{{ game.title }}</router-link></div>
-              <div class="gamelist__year">{{ releaseYear(game.releasedate) }}</div>
+              <div class="gamelist__year"><router-link class="gamelist__link" :to="{name: 'Game', params:{id: game.gameid, url: titleToURL(game.title)}}">{{ releaseYear(game.releasedate) }}</router-link></div>
           </div>
         </div>
 
@@ -27,7 +25,6 @@
 <script>
 
 import GameService from '@/services/gameService'
-import TheNav from '../components/TheNav.vue'
 
 export default {
   name: "Home",
@@ -36,9 +33,6 @@ export default {
       games:{},
       error: ''
     }
-  },
-  components:{
-    TheNav
   },
   async mounted(){
     try{
