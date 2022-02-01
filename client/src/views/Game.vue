@@ -1,11 +1,11 @@
 <template>
-	<div class="page">
+	<div class="page page__block">
 		<div :key="game.id" v-for="game in games">
-			<div class="page__block game">
+			<div class="game">
 
 				<h1 class="page__title">{{game.title}}</h1>
 
-				<div class="game__block">
+				<div class="game__block" :class="{ show:mounted }">
 					<div class="game__cover"><img :src="game.coverimage" /></div>
 					<ul class="game__attributes">
 						<li v-if="game.publisher"><div class="game__attributes--title">Publisher</div> {{ game.publisher }}</li>
@@ -36,6 +36,7 @@ export default {
 	data(){
 		return{
 			games:{},
+			mounted: false,
 			error: ''
 		}
 	},
@@ -46,6 +47,7 @@ export default {
 			console.log(err)
 			this.error = err
 		}
+		this.mounted = true;
 	},
 	methods:{
 		formatDate(date){

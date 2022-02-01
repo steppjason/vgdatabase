@@ -1,7 +1,3 @@
-.game{
-
-}
-
 .game__block{
     display: flex;
     flex-wrap: nowrap;
@@ -11,9 +7,8 @@
 }
 
 .game__title{
-    margin:0;
-    margin-bottom:1rem
-    
+    margin: 0;
+    margin-bottom: 1rem;
 }
 
 .game__cover, .game__attributes{
@@ -38,7 +33,7 @@
     font-weight: 700;
     color: var(--main-primary-color);
     padding-bottom: 0;
-    margin-bottom:0.25rem;
+    margin-bottom: 0.25rem;
     text-transform: uppercase;
 }
 

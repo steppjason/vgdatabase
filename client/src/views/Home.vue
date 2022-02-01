@@ -1,25 +1,22 @@
 <template>
-	<div class="page">
+	<div class="page page__block">
 
-		<div class="page__block">
+		<h1 class="page__title">List of all games</h1>
 
-			<h1 class="page__title">List of all games</h1>
-
-			<div class="gamelist">
-				<div class="gamelist__row">
-					<div class="gamelist__head">Title</div>
-					<div class="gamelist__year gamelist__head">Release Year</div>
-				</div>
-
-				<div class="gamelist__row" :key="game.id" v-for="game in games">
-					<div class="gamelist__title"><router-link class="gamelist__link" :to="{name: 'Game', params:{id: game.gameid, url: titleToURL(game.title)}}">{{ game.title }}</router-link></div>
-					<div class="gamelist__year"><router-link class="gamelist__link" :to="{name: 'Game', params:{id: game.gameid, url: titleToURL(game.title)}}">{{ releaseYear(game.releasedate) }}</router-link></div>
-				</div>
+		<div class="gamelist" :class="{ show: mounted }" >
+			<div class="gamelist__row">
+				<div class="gamelist__head">Title</div>
+				<div class="gamelist__year gamelist__head">Release Year</div>
 			</div>
 
-			<div>{{ error }}</div>
-
+			<div class="gamelist__row" :key="game.id" v-for="game in games">
+				<div class="gamelist__title"><router-link class="gamelist__link" :to="{name: 'Game', params:{id: game.gameid, url: titleToURL(game.title)}}">{{ game.title }}</router-link></div>
+				<div class="gamelist__year"><router-link class="gamelist__link" :to="{name: 'Game', params:{id: game.gameid, url: titleToURL(game.title)}}">{{ releaseYear(game.releasedate) }}</router-link></div>
+			</div>
 		</div>
+
+		<div>{{ error }}</div>
+
 	</div>
 </template>
 
@@ -32,6 +29,7 @@ export default {
 	data(){
 		return{
 			games:{},
+			mounted: false,
 			error: ''
 		}
 	},
@@ -42,6 +40,7 @@ export default {
 			console.log(err)
 			this.error = err
 		}
+		this.mounted = true;
 	},
 	methods:{
 		formatDate(date){

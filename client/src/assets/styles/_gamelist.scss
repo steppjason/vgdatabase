@@ -1,18 +1,20 @@
-.gamelist{
-
+.gamelist, .game__block{
+	opacity: 0;
+	animation-delay: 5s;
+	transition: opacity 0.5s ease-in;
 }
 
 .gamelist__row{
     display: grid;
-    grid-template-columns: auto 120px;
+    grid-template-columns: auto 122px;
 }
 
 .gamelist__row:first-child, .gamelist__row:last-child{
-    padding-bottom:0;
+    padding-bottom: 0;
 }
 
 .gamelist__head, .gamelist__title, .gamelist__year {
-    padding-bottom:0.25rem;
+    padding-bottom: 0.25rem;
 }
 
 .gamelist__title, .gamelist__year{
@@ -21,15 +23,15 @@
 
 .gamelist__head{
     font-weight: 900;
-    border-bottom:3px solid var(--accent-color);
+    border-bottom: 3px solid var(--accent-color);
     text-transform: uppercase;
-    color:var(--main-primary-color);
+    color: var(--main-primary-color);
 }
 
 .gamelist__link{
     display: block;
     text-decoration: none;
-    font-weight:700;
+    font-weight: 700;
     color: var(--contrast-primary-color);
     transition: 0.3s all ease-in;
     padding: 1rem;
@@ -41,12 +43,13 @@
 
 .gamelist__year{
     text-align: right;
+
 }
 
 .gamelist__year > .gamelist__link{
     display: block;
     text-decoration: none;
-    font-weight:500;
+    font-weight: 500;
     color: var(--main-secondary-color);
 }
 
