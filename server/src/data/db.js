@@ -1,7 +1,6 @@
 const {Pool} = require('pg')
 
 try {
-    
 	pool = new Pool({
         connectionString: process.env.DB_URI,
         // user: process.env.DB_USER,
@@ -13,11 +12,9 @@ try {
             rejectUnauthorized: false
         }
 	})     
-	
 } catch (err) {
     console.error("Connection failed: " + err)    
 }
-
 
 async function runQuery(queryString, params, successMessage, errorMessage, req, res) {
     try {
@@ -36,6 +33,5 @@ async function runQuery(queryString, params, successMessage, errorMessage, req, 
         res.status(404).json({success: false, message: errorMessage, error: err })
     }
 }
-
 
 module.exports = { pool, runQuery }
