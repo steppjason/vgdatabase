@@ -37,6 +37,10 @@ html,body{
 	background: var(--bg-secondary-color);
 }
 
+::placeholder{
+	color: var(--main-secondary-color);
+}
+
 
 h1,h2,h3,h4,h5,h6{
     font-family: "Montserrat", sans-serif;
@@ -117,4 +121,20 @@ footer{
 
 .made-with>span{
     opacity: 0.5;
+}
+
+button{
+	border: 0;
+	border-radius: 5px;
+	padding: 0.75rem;
+	font-size: 0.9rem;
+	font-weight: 700;
+	color: var(--main-primary-color);
+	background-color: var(--contrast-primary-color);
+	transition: all 0.25s ease-in-out;
+}
+
+button:hover{
+	background-color: var(--contrast-secondary-color);
+	cursor: pointer;
 }
