@@ -1,11 +1,12 @@
 <template>
 	<div class="page page__block">
-		<div :key="game.id" v-for="game in games">
-			<div class="game">
 
-				<h1 class="page__title">{{game.title}}</h1>
+		<div class="game" :class="{ show: mounted }">
+			
+			<div :key="game.id" v-for="game in games">
 
-				<div class="game__block" :class="{ show:mounted }">
+				<div class="game__block">
+					<h1 class="game__title">{{game.title}}</h1>
 					<div class="game__cover"><img :src="game.coverimage" /></div>
 					<ul class="game__attributes">
 						<li v-if="game.publisher"><div class="game__attributes--title">Publisher</div> {{ game.publisher }}</li>
@@ -14,25 +15,34 @@
 						<li v-if="game.genre"><div class="game__attributes--title">Genre</div> {{ game.genre }}</li>
 						<li v-if="game.releasedate"><div class="game__attributes--title">Release Date</div> {{ formatDate(game.releasedate) }}</li>
 					</ul>
+
+					<div v-if="game.summary" class="game__summary">
+						<h3>Summary</h3>
+						{{game.summary}}
+					</div>
+
+					<div v-if="game.summary" class="game__description">
+						<h3>Plot</h3>
+						{{game.longdescription}}
+					</div>
+
 				</div>
 
-				<div v-if="game.summary" class="game__summary">
-					<h3>Summary</h3>
-					{{game.summary}}
-				</div>
-
-				<!--<div class="game__description">{{game.longdescription}}</div>-->
 			</div>
+
 		</div>
+
+		<div>{{ error }}</div>
+
 	</div>
 </template>
 
-
 <script>
+
 import GameService from '@/services/gameService'
 
 export default {
-	name: 'Game',
+	name: "Game",
 	data(){
 		return{
 			games:{},
@@ -47,15 +57,11 @@ export default {
 			console.log(err)
 			this.error = err
 		}
-		this.mounted = true;
+		this.mounted = true
 	},
 	methods:{
 		formatDate(date){
 			return date = new Date(date).toLocaleDateString("en-US")
-		},
-
-		releaseYear(date){
-			return date = new Date(date).getFullYear()
 		}
 	}
 }

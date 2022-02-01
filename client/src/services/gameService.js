@@ -5,20 +5,20 @@ class GameService{
 		return await api().get('/')
 	}
 
-	static getGame(id, url) {
-		return api().get(`/${id}/${url}`)
+	static async getGame(id, url) {
+		return await api().get(`/${id}/${url}`)
 	}
 
-	static addGame(game) {
-		return api().post(`/${game}`)
+	static async addGame(game) {
+		return await api().post(`/${game}`)
 	}
 
-	static updateGame(id) {
-		return api().put(`/${id}`)
+	static async updateGame(id) {
+		return await api().put(`/${id}`)
 	}
 
-	static deleteGame(id) {
-		return api().delete(`/${id}`)
+	static async deleteGame(id) {
+		return await api().delete(`/${id}`)
 	}
 }
 

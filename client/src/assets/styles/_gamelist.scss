@@ -1,7 +1,7 @@
-.gamelist, .game__block{
+.gamelist, .game{
 	opacity: 0;
-	animation-delay: 5s;
 	transition: opacity 0.5s ease-in;
+	transition-delay: 0.35s;
 }
 
 .gamelist__row{

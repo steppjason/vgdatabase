@@ -40,7 +40,7 @@ export default {
 			console.log(err)
 			this.error = err
 		}
-		this.mounted = true;
+		this.mounted = true
 	},
 	methods:{
 		formatDate(date){
