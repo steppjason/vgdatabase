@@ -18,7 +18,7 @@ INSERT INTO game (title, summary, longdescription, publisher, developer, platfor
 			'Playstation', 'Stealth', '9/3/1998',
 			'https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Metal_Gear_Solid_cover_art.png/220px-Metal_Gear_Solid_cover_art.png'),
     
-            ('Metal Gear Solid 2: Sons of Liberty', '', '', 'Konami', 'Konami Computer Entertainment Japan', 
+        	('Metal Gear Solid 2: Sons of Liberty', '', '', 'Konami', 'Konami Computer Entertainment Japan', 
 			'Playstation 2', 'Stealth', '11/13/2001',
 			'https://upload.wikimedia.org/wikipedia/en/thumb/6/6a/Metalgear2boxart.jpg/220px-Metalgear2boxart.jpg'),
 					
@@ -38,7 +38,7 @@ INSERT INTO game (title, summary, longdescription, publisher, developer, platfor
 			'Playstation 4', 'Stealth', '9/1/2015',
 			'https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Metal_Gear_Solid_V_The_Phantom_Pain_cover.png/220px-Metal_Gear_Solid_V_The_Phantom_Pain_cover.png')
 			
-	RETURNING *;
+		RETURNING *;
 			
 			
 			

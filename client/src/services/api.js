@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default () => {
-    return axios.create( { baseURL: '/api/game' } )
+	return axios.create( { baseURL: '/api/game' } )
 }

@@ -16,4 +16,24 @@ try {
     console.error("Connection failed: " + err)    
 }
 
-module.exports = pool
+
+async function runQuery(queryString, params, successMessage, errorMessage, req, res) {
+    try {
+        let query = null
+
+        if (params !== undefined || params.length > 0) {
+            query = await pool.query(queryString, params)    
+        } else {
+            query = await pool.query(queryString)    
+        }
+
+        res.status(200).json({ success: true, message: successMessage, data: query.rows })
+
+    } catch (err) {
+        console.error(err)
+        res.status(404).json({success: false, message: errorMessage, error: err })
+    }
+}
+
+
+module.exports = { pool, runQuery }
