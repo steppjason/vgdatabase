@@ -18,12 +18,12 @@
 
 					<div v-if="game.summary" class="game__summary">
 						<h3>Summary</h3>
-						{{game.summary}}
+						<p style="white-space: pre-line">{{game.summary}}</p>
 					</div>
 
 					<div v-if="game.summary" class="game__description">
 						<h3>Plot</h3>
-						{{game.longdescription}}
+						<p style="white-space: pre-line">{{game.longdescription}}</p>
 					</div>
 
 				</div>
@@ -32,7 +32,7 @@
 
 		</div>
 
-		<div>{{ error }}</div>
+		<div class="error" v-if="games.length < 1"><div class="error__message">Game could not be found!</div></div>
 
 	</div>
 </template>
@@ -57,6 +57,7 @@ export default {
 			console.log(err)
 			this.error = err
 		}
+		console.log(this.games)
 		this.mounted = true
 	},
 	methods:{

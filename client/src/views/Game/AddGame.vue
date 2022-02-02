@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="page page__block">
-			<h1>Add new Game</h1>
+			<h1 class="page__title">Add new Game</h1>
 			<form class="form" method="POST" action="/" @submit.prevent="addNewGame">
 				<div class="form__col">
 					<label class="form__label" for="title">Title *</label>
@@ -18,11 +18,14 @@
 
 					<label class="form__label" for="genre">Genre</label>
 					<input v-model="formData.genre" class="form__input" name="genre" type="text">
+
+					<label class="form__label" for="coverimage">Cover Image URL</label>
+					<input v-model="formData.coverimage" class="form__input" name="coverimage" type="text">
 				</div>
 
 				<div class="form__col">
-					<label class="form__label" for="releasedate">Release Date *</label>
-					<input v-model="formData.releasedate" class="form__input" name="releasedate" type="date" required>
+					<label class="form__label" for="releasedate">Release Date</label>
+					<input v-model="formData.releasedate" class="form__input" name="releasedate" type="date">
 
 					<label class="form__label" for="summary">Summary</label>
 					<textarea v-model="formData.summary" class="form__input" name="summary" id="" cols="30" rows="10"></textarea>
@@ -32,13 +35,12 @@
 				</div>
 
 				<div class="form__col form__col_button">
-					<button class="form__button">Add Game</button>
+					<button id="addgamebutton" class="form__button">Add Game</button>
 				</div>
 
-				<div>
-					<div>{{ formData }}</div>
-				</div>
+				
 			</form>
+			
 		</div>
 	</div>
 </template>
@@ -57,24 +59,31 @@ export default {
 				developer:null,
 				platform:null,
 				genre:null,
+				coverimage: null,
 				releasedate:null,
 				summary:null,
 				longdescription:null
-			}
+			},
+			games:{},
+			submitted: false,
+			hidden: false,
+			error: ''
 			
 		}	
 	},
 	methods:{
 		async addNewGame(){
 			try{
-				this.games = (await GameService.addGame(this.formData))
-				this.$router.push("/")
+				var button = document.getElementById('addgamebutton')
+				button.disabled = true;
+				this.games = (await GameService.addGame(this.formData)).data.data
+				this.$router.push(`/${this.games[0].gameid}/game-added-successfully`)
 			} catch(err){
 				console.log(err)
 				this.error = err
 			}
-
 		}
+
 	}
 
 }

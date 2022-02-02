@@ -68,6 +68,21 @@ p{
 	opacity: 1 !important;
 }
 
+.hide{
+	opacity: 0 !important;
+}
+
+.hidden{
+	display: none !important;
+}
+
+.error{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height:500px;
+}
+
 #wrapper{
     padding: 2rem;
     margin: auto;
@@ -77,9 +92,6 @@ p{
 .header{
 	position: relative;
 	z-index:9999;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 header{
@@ -88,8 +100,6 @@ header{
 }
 
 header, nav{
-    flex-grow: 1;
-    align-items: flex-end;
     margin-bottom: 1rem;
 }
 
@@ -98,12 +108,28 @@ main{
 }
 
 .header__nav{
-    text-align: right;
 }
 
 .header__link{
     display: inline-block;
-    margin-left: 2rem;
+    margin-right: 1rem;
+	padding:0.5rem;
+	background-color: var(--main-primary-color);
+	color: var(--bg-secondary-color);
+	border-radius: 5px;
+}
+
+.header__link:hover{
+	color: var(--bg-secondary-color) !important;
+}
+
+.header__link--action{
+	background-color: var(--contrast-primary-color);
+	color: var(--main-primary-color);
+}
+
+.header__link--action:hover{
+	color: var(--main-primary-color) !important;
 }
 
 footer{
@@ -135,6 +161,5 @@ button{
 }
 
 button:hover{
-	background-color: var(--contrast-secondary-color);
 	cursor: pointer;
 }

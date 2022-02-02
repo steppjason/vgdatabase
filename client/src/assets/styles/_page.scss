@@ -3,7 +3,8 @@
     background-color: var(--bg-secondary-color);
     box-shadow: 5px 5px 5px 1px var(--shadow-color);
     border-radius: 5px;
-	min-height: 500px
+	min-height: 500px;
+	transition: all 0.5s ease-in;
 }
 
 .page__header{
@@ -22,6 +23,15 @@
 .page__title{
     margin: 0;
     margin-bottom: 1rem;
+	transition: all 0.5s linear;
+}
+
+.page__message{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 500px
 }
 
 @media screen and (max-width: 540px) {
