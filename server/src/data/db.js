@@ -16,7 +16,7 @@ try {
     console.error("Connection failed: " + err)    
 }
 
-async function runQuery(queryString, params, successMessage, errorMessage, req, res) {
+async function runQuery(queryString, params, successMessage, errorMessage, req, res, method) {
     try {
         let query = null
 
@@ -26,8 +26,12 @@ async function runQuery(queryString, params, successMessage, errorMessage, req, 
             query = await pool.query(queryString)    
         }
 
-        res.status(200).json({ success: true, message: successMessage, data: query.rows })
-
+		if (method = "GET") {
+			res.status(200).json({ success: true, message: successMessage, data: query.rows })
+		} else if (method = "POST") {
+			res.status(201).json({ success: true, message: successMessage, data: query.rows })
+		}
+			
     } catch (err) {
         console.error(err)
         res.status(404).json({success: false, message: errorMessage, error: err })

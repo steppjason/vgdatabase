@@ -2,13 +2,20 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
 import NewGame from "@/views/NewGame.vue";
+
 import Game from "@/views/Game.vue";
+import AddGame from "@/views/Home.vue";
 
 const routes = [
 	{
 		path: "/",
 		name: "Home",
 		component: Home,
+	},
+	{
+		path: "/add",
+		name: "AddGame",
+		component: AddGame,
 	},
 	{
 		path: "/about",

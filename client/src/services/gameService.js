@@ -10,7 +10,7 @@ class GameService{
 	}
 
 	static async addGame(game) {
-		return await api().post(`/${game}`)
+		return await api().post(`/`, game)
 	}
 
 	static async updateGame(id) {

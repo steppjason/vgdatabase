@@ -10,8 +10,8 @@
 			</div>
 
 			<div class="gamelist__row" :key="game.id" v-for="game in games">
-				<div class="gamelist__title"><router-link class="gamelist__link" :to="{name: 'Game', params:{id: game.gameid, url: titleToURL(game.title)}}">{{ game.title }}</router-link></div>
-				<div class="gamelist__year"><router-link class="gamelist__link" :to="{name: 'Game', params:{id: game.gameid, url: titleToURL(game.title)}}">{{ releaseYear(game.releasedate) }}</router-link></div>
+				<div v-if="game.title" class="gamelist__title"><router-link class="gamelist__link" :to="{name: 'Game', params:{id: game.gameid, url: titleToURL(game.title)}}">{{ game.title }}</router-link></div>
+				<div v-if="game.releasedate" class="gamelist__year"><router-link class="gamelist__link" :to="{name: 'Game', params:{id: game.gameid, url: titleToURL(game.title)}}">{{ releaseYear(game.releasedate) }}</router-link></div>
 			</div>
 		</div>
 
