@@ -8,7 +8,6 @@
 
 .game__title{
     margin: 0;
-    margin-bottom: 1rem;
 	flex-grow: 1;
 	min-width: 100%;
 }
@@ -95,12 +94,34 @@
         flex-wrap: wrap;
     }
 
+	.game__nav{
+		margin-top: 0rem;
+		order: 1;
+		margin-bottom: 0;
+	}
+
+	.game__title{
+		font-size: 1.5rem;
+		order: 2;
+		margin-bottom: 0;
+	}
+
     .game__cover{
         width: 100%;
         max-width: initial;
+		order: 3;
     }
 
     .game__summary{
         margin-top: 2rem;
+		order: 5;
     }
+
+	.game__attributes{
+		order: 6;
+	}
+
+	.game__description{
+		order: 7;
+	}
 }
