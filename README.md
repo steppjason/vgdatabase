@@ -13,7 +13,7 @@ See a working [live site](https://vgd.jasonstepp.me/).
 ## Goals
 
 Future features will turn it into a fully fleshed out video game collection tracking app. With user authentication, 
-adding games, updating games, and deleting games from youor collection.
+adding games, updating games, and deleting games from your collection.
 
 ## Getting Started
 
