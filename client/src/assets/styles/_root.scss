@@ -76,6 +76,10 @@ p{
 	display: none !important;
 }
 
+.allowclick{
+	pointer-events: all !important; 
+}
+
 .error{
 	display: flex;
 	align-items: center;
@@ -125,7 +129,7 @@ main{
 
 .header__link--action{
 	background-color: var(--contrast-primary-color);
-	color: var(--main-primary-color);
+	color: var(--white);
 }
 
 .header__link--action:hover{
@@ -155,7 +159,7 @@ button{
 	padding: 0.75rem;
 	font-size: 0.9rem;
 	font-weight: 700;
-	color: var(--main-primary-color);
+	color: var(--white);
 	background-color: var(--contrast-primary-color);
 	transition: all 0.25s ease-in-out;
 }
@@ -165,9 +169,22 @@ button:hover{
 }
 
 button:disabled{
-	background-color: var(--main-primary-color);
-	color: var(--main-secondary-color);
-	transition: all 0s ease-in-out;
+	background-color: var(--main-primary-color) !important;
+	color: var(--main-secondary-color) !important;
+	transition: all 0s ease-in-out !important;
+}
+
+.trash_can{
+	padding: 0.5rem;
+	border-radius: 5px;
+	background-color: var(--red);
+	cursor: pointer;
+}
+
+.trash_can > svg{
+	margin-bottom: -4px; 
+	max-width: 16px;
+	color: var(--white);
 }
 
 .gamelist, .game, .page__message, .form__update, .page__title--hide{

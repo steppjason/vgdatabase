@@ -6,6 +6,7 @@ import Game from "@/views/Game/Game.vue";
 import AddGame from "@/views/Game/AddGame.vue";
 import AddGameSuccess from "@/views/Game/Success.vue";
 import UpdateGame from "@/views/Game/UpdateGame.vue";
+import DeleteGameSuccess from "@/views/Game/DeleteSuccess.vue";
 
 
 const routes = [
@@ -38,7 +39,14 @@ const routes = [
 		path: "/:id/update-game",
 		name: "UpdateGame",
 		component: UpdateGame,
+	},
+	{
+		path: "/game-deleted-successfully",
+		name: "DeleteGameSuccess",
+		component: DeleteGameSuccess,
 	}
+
+	
 ];
 
 const router = createRouter({
