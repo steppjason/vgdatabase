@@ -2,11 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
 
-
 import Game from "@/views/Game/Game.vue";
 import AddGame from "@/views/Game/AddGame.vue";
 import AddGameSuccess from "@/views/Game/Success.vue";
-
+import UpdateGame from "@/views/Game/UpdateGame.vue";
 
 
 const routes = [
@@ -34,6 +33,11 @@ const routes = [
 		path: "/:id/game-added-successfully",
 		name: "AddGameSuccess",
 		component: AddGameSuccess,
+	},
+	{
+		path: "/:id/update-game",
+		name: "UpdateGame",
+		component: UpdateGame,
 	}
 ];
 

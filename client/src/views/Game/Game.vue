@@ -7,6 +7,9 @@
 
 				<div class="game__block">
 					<h1 class="game__title">{{game.title}}</h1>
+					<div class="game__nav">
+						<router-link :to="{name:'UpdateGame'}" class="header__link header__link--action">Edit</router-link>
+					</div>
 					<div class="game__cover"><img :src="game.coverimage" /></div>
 					<ul class="game__attributes">
 						<li v-if="game.publisher"><div class="game__attributes--title">Publisher</div> {{ game.publisher }}</li>

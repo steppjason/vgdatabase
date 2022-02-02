@@ -163,3 +163,15 @@ button{
 button:hover{
 	cursor: pointer;
 }
+
+button:disabled{
+	background-color: var(--main-primary-color);
+	color: var(--main-secondary-color);
+	transition: all 0s ease-in-out;
+}
+
+.gamelist, .game, .page__message, .form__update, .page__title--hide{
+	opacity: 0;
+	transition: opacity 0.5s ease-in;
+	transition-delay: 0.35s;
+}

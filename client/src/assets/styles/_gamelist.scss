@@ -1,9 +1,3 @@
-.gamelist, .game, .page__message{
-	opacity: 0;
-	transition: opacity 0.5s ease-in;
-	transition-delay: 0.35s;
-}
-
 .gamelist__row{
     display: grid;
     grid-template-columns: auto 122px;
