@@ -8,8 +8,6 @@ Built as a practice project to learn Node.js / Express.js and Vue.js. Uses a rem
 
 Right now it is a proof of concept. It retrieves video game data from a remote database and displays it.
 
-See a working [live site](https://vgd.jasonstepp.me/).
-
 ## Goals
 
 Future features will turn it into a fully fleshed out video game collection tracking app. With user authentication, 
